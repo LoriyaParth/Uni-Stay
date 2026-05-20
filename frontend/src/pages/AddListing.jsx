@@ -74,7 +74,7 @@ export default function AddListing() {
       let urls = [];
       if (imgs.length) {
         const fd = new FormData(); imgs.forEach(i => fd.append('images', i));
-        try { const r = await api.post('/upload', fd, { headers: { 'Content-Type': 'multipart/form-data' } }); urls = r.data.urls.map(u => `http://localhost:5000${u}`); } catch { urls = []; }
+        try { const r = await api.post('/upload', fd, { headers: { 'Content-Type': 'multipart/form-data' } }); const baseUrl = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace('/api', ''); urls = r.data.urls.map(u => `${baseUrl}${u}`); } catch { urls = []; }
       }
       await api.post('/listings', {
         ...form, 
