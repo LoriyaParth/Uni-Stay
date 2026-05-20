@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Add Listing | UniStay</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#684000",
+                        "on-secondary-fixed-variant": "#005049",
+                        "tertiary-container": "#885500",
+                        "surface-variant": "#d3e4fe",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "outline": "#777587",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-container": "#dad7ff",
+                        "on-surface-variant": "#464555",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed": "#00201d",
+                        "secondary": "#006a61",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-container": "#ffd4a4",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "secondary-container": "#86f2e4",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#c3c0ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "primary-container": "#4f46e5",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#006f66",
+                        "surface-tint": "#4d44e3",
+                        "on-primary-fixed": "#0f0069",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "secondary-fixed": "#89f5e7",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface": "#0b1c30",
+                        "primary": "#3525cd",
+                        "outline-variant": "#c7c4d8",
+                        "surface-container-high": "#dce9ff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#e2dfff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "xl": "64px",
+                        "container-max": "1280px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h2": ["30px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-surface text-on-surface min-h-screen">
+    <!-- TopNavBar (JSON Mapping) -->
+    <nav
+        class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md text-indigo-600 dark:text-indigo-400 font-inter antialiased text-sm font-medium docked full-width top-0 border-b z-50 border-slate-200 dark:border-slate-800 shadow-sm flex justify-between items-center w-full px-6 md:px-16 py-4 max-w-full sticky">
+        <div class="text-2xl font-black tracking-tight text-indigo-600 dark:text-indigo-400">UniStay</div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1" href="#">Add Listing</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">My
+                Favorites</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">Help</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full relative">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full relative">
+                <span class="material-symbols-outlined">chat</span>
+            </button>
+            <div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+                <img alt="User profile" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMmG5XLHt23OTSxUdz2ctbcgeQKNdZURV2_ZdI4jH2jGNHmIW2VGlBJXoIK07eUptpoWeIh3XN3zh25r_E8l_kRMkwW_ubRirCyblvnRmGu2tPZO7vUhFBEvo0c83XB5TkBUtD8AoU4YvMLPKNaRDsf-Ale2l3P9CGgWB-RjUK3EimTZ6mbNBYjVP4wQV-UNWqSkpJpWzsp2YSd6H4HQI_JDXaKzKIrPLu4ii4lr_sU60ktl0uDdT_R4tMawaTBiV10k3QZn8uFe0" />
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <!-- Header Section -->
+        <header class="mb-12">
+            <h1 class="font-h1 text-h1 text-on-surface mb-2">Create New Listing</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">Complete the steps below to list your property
+                on UniStay.</p>
+        </header>
+        <!-- Stepper -->
+        <div class="grid grid-cols-4 gap-4 mb-12">
+            <div class="h-2 bg-primary rounded-full"></div>
+            <div class="h-2 bg-surface-container-highest rounded-full"></div>
+            <div class="h-2 bg-surface-container-highest rounded-full"></div>
+            <div class="h-2 bg-surface-container-highest rounded-full"></div>
+        </div>
+        <form class="space-y-12">
+            <!-- Section 1: Basic Info -->
+            <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-primary-container text-white rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined">info</span>
+                    </div>
+                    <h2 class="font-h3 text-h3">Basic Info</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="font-label-md text-label-md text-on-surface-variant">Property Name</label>
+                        <input
+                            class="w-full p-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                            placeholder="e.g. Royal Heights Boys PG" type="text" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label-md text-label-md text-on-surface-variant">Property Type</label>
+                        <select
+                            class="w-full p-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+                            <option>Paying Guest (PG)</option>
+                            <option>Private Apartment</option>
+                            <option>Shared Flat</option>
+                            <option>Hostel</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="font-label-md text-label-md text-on-surface-variant">Full Address</label>
+                        <textarea
+                            class="w-full p-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                            placeholder="Street name, landmark, city, and zip code" rows="3"></textarea>
+                    </div>
+                </div>
+            </section>
+            <!-- Section 2: Media Upload -->
+            <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-primary-container text-white rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined">photo_library</span>
+                    </div>
+                    <h2 class="font-h3 text-h3">Media</h2>
+                </div>
+                <div
+                    class="border-2 border-dashed border-outline-variant rounded-xl p-12 text-center bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-outline mb-4 group-hover:text-primary transition-colors">cloud_upload</span>
+                    <h3 class="font-label-md text-body-md mb-2">Drag and drop your photos here</h3>
+                    <p class="text-on-surface-variant text-label-sm">High-quality JPG or PNG, minimum 1200x800px (Max 10
+                        images)</p>
+                    <button
+                        class="mt-6 px-6 py-2 bg-white border border-primary text-primary font-label-md rounded-lg hover:bg-primary hover:text-white transition-all"
+                        type="button">Browse Files</button>
+                </div>
+                <div class="grid grid-cols-3 md:grid-cols-5 gap-4 mt-8">
+                    <div
+                        class="aspect-square rounded-lg bg-surface-container-high relative group overflow-hidden border border-outline-variant">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A brightly lit modern student bedroom featuring a minimalist wooden desk, a sleek ergonomic chair, and a neatly made twin bed with neutral-toned linens. Large windows allow soft natural light to pour into the space, highlighting the clean white walls and light oak flooring. The atmosphere is calm, academic, and organized, perfectly suited for a premium student housing listing in a contemporary urban setting."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCqi-sfvaFI8umBPK5kI4Ze9N6YrKcd8otMO6EEfKUlBp_j4a2edO34cLSP7IDgsSa5n-RJOj89sV357JJqPXDgZce765ovk7R0jnPGLF8zz5te0oObgnFJdEENZ1kTnRYu9OqdtfL71MUngocSVg10HmzUDmZ6s4wD9iXd-GWdznhwbdViuTC5gad2ZQ__xDJWRqmrSXuyXHlwo0aJg4786iLfZWMKM9396s9cDbeCYcaWE2p1DF9bhDSaix7v05UapnWEvHd_tY" />
+                        <button
+                            class="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-xs">close</span>
+                        </button>
+                    </div>
+                    <div
+                        class="aspect-square rounded-lg bg-surface-container-high border-2 border-dashed border-outline-variant flex items-center justify-center">
+                        <span class="material-symbols-outlined text-outline">add</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Section 3: Room Configurations -->
+            <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 bg-primary-container text-white rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined">bed</span>
+                        </div>
+                        <h2 class="font-h3 text-h3">Room Configurations</h2>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 text-primary font-label-md hover:underline decoration-2 underline-offset-4"
+                        type="button">
+                        <span class="material-symbols-outlined">add_circle</span>
+                        Add Room Type
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-outline-variant">
+                                <th class="pb-4 font-label-md text-on-surface-variant">Occupancy</th>
+                                <th class="pb-4 font-label-md text-on-surface-variant">Price (Monthly)</th>
+                                <th class="pb-4 font-label-md text-on-surface-variant">Deposit</th>
+                                <th class="pb-4 font-label-md text-on-surface-variant">Available Units</th>
+                                <th class="pb-4"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant">
+                            <tr>
+                                <td class="py-6">
+                                    <select class="p-2 bg-surface border border-outline-variant rounded-lg">
+                                        <option>Single Sharing</option>
+                                        <option>Double Sharing</option>
+                                        <option>Triple Sharing</option>
+                                    </select>
+                                </td>
+                                <td class="py-6">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-on-surface-variant font-label-md">$</span>
+                                        <input class="w-24 p-2 bg-surface border border-outline-variant rounded-lg"
+                                            placeholder="0.00" type="number" />
+                                    </div>
+                                </td>
+                                <td class="py-6">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-on-surface-variant font-label-md">$</span>
+                                        <input class="w-24 p-2 bg-surface border border-outline-variant rounded-lg"
+                                            placeholder="0.00" type="number" />
+                                    </div>
+                                </td>
+                                <td class="py-6">
+                                    <input class="w-16 p-2 bg-surface border border-outline-variant rounded-lg"
+                                        placeholder="1" type="number" />
+                                </td>
+                                <td class="py-6 text-right">
+                                    <button
+                                        class="text-error hover:bg-error-container p-2 rounded-full transition-colors"
+                                        type="button">
+                                        <span class="material-symbols-outlined">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- Section 4: Amenities Checklist -->
+            <section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-primary-container text-white rounded-lg flex items-center justify-center">
+                        <span class="material-symbols-outlined">checklist</span>
+                    </div>
+                    <h2 class="font-h3 text-h3">Amenities Checklist</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Amenity Item -->
+                    <label
+                        class="flex items-center justify-between p-4 bg-surface border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-on-surface-variant">water_drop</span>
+                            <span class="font-label-md">RO Water Purifier</span>
+                        </div>
+                        <input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                            type="checkbox" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between p-4 bg-surface border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-on-surface-variant">cleaning_services</span>
+                            <span class="font-label-md">Daily Cleaning</span>
+                        </div>
+                        <input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                            type="checkbox" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between p-4 bg-surface border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-on-surface-variant">local_parking</span>
+                            <span class="font-label-md">Parking Space</span>
+                        </div>
+                        <input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                            type="checkbox" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between p-4 bg-surface border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-on-surface-variant">wifi</span>
+                            <span class="font-label-md">High-speed WiFi</span>
+                        </div>
+                        <input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                            type="checkbox" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between p-4 bg-surface border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-on-surface-variant">ac_unit</span>
+                            <span class="font-label-md">Air Conditioning</span>
+                        </div>
+                        <input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                            type="checkbox" />
+                    </label>
+                    <label
+                        class="flex items-center justify-between p-4 bg-surface border border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-on-surface-variant">restaurant</span>
+                            <span class="font-label-md">Mess/Kitchen</span>
+                        </div>
+                        <input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary"
+                            type="checkbox" />
+                    </label>
+                </div>
+            </section>
+            <!-- Form Actions -->
+            <footer class="flex items-center justify-between pt-8">
+                <button class="px-8 py-3 text-on-surface-variant font-label-md hover:text-on-surface transition-colors"
+                    type="button">Save as Draft</button>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="px-8 py-3 bg-white border border-outline-variant text-on-surface font-label-md rounded-lg hover:bg-surface-container-low transition-all"
+                        type="button">Previous</button>
+                    <button
+                        class="px-10 py-3 bg-primary text-white font-label-md rounded-lg hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] transition-all"
+                        type="submit">Continue to Preview</button>
+                </div>
+            </footer>
+        </form>
+    </main>
+    <!-- Footer (JSON Mapping) -->
+    <footer
+        class="bg-white dark:bg-slate-900 font-inter text-sm text-slate-500 dark:text-slate-400 full-width border-t py-12 border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1">
+                <div class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4">UniStay</div>
+                <p class="text-slate-500 dark:text-slate-400">Finding the perfect student stay, simplified.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-4">Platform</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-indigo-500 underline decoration-indigo-500 underline-offset-4 opacity-90 hover:opacity-100"
+                            href="#">About Us</a></li>
+                    <li><a class="text-slate-500 hover:text-indigo-500 underline decoration-indigo-500 underline-offset-4 opacity-90 hover:opacity-100"
+                            href="#">Contact Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-4">Legal</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-indigo-500 underline decoration-indigo-500 underline-offset-4 opacity-90 hover:opacity-100"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="text-slate-500 hover:text-indigo-500 underline decoration-indigo-500 underline-offset-4 opacity-90 hover:opacity-100"
+                            href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-4">Support</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-indigo-500 underline decoration-indigo-500 underline-offset-4 opacity-90 hover:opacity-100"
+                            href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+            <p>© 2024 UniStay PG Finder. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
